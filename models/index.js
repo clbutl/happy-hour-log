@@ -1,9 +1,9 @@
 const User = require('./User');
-const Food = require('./Food');
-const Drink = require('./Drink');
+const Item = require('./Item');
+const Location = require('./Location');
 
 // Painting.belongsTo(Gallery, {
 //   foreignKey: 'gallery_id',
 // });
 
-module.exports = { User, Food, Drink };
+module.exports = { User, Item, Location };
