@@ -32,7 +32,7 @@ Drink.init(
       allowNull: false, 
     },
     dealDay: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true, // only applies to dealTypes that are single day
     },
     locationId: {
