@@ -8,7 +8,7 @@ const drinkData = [
     "originalPrice": 5.00,
     "dealType": "single day",
     "dealDay": "Monday",
-    "locationId": 1
+    "location_id": 1
   },
   {
     "isFood": false,
@@ -17,7 +17,7 @@ const drinkData = [
     "originalPrice": 15.00,
     "dealType": "single day",
     "dealDay": "Tuesday",
-    "locationId": 2
+    "location_id": 2
   },
   {
     "isFood": false,
@@ -26,7 +26,7 @@ const drinkData = [
     "originalPrice": 7.00,
     "dealType": "everyday",
     "dealDay": null,
-    "locationId": 3
+    "location_id": 3
   },
   {
     "isFood": false,
@@ -35,7 +35,7 @@ const drinkData = [
     "originalPrice": null,
     "dealType": "single day",
     "dealDay": "Wednesday",
-    "locationId": 3
+    "location_id": 3
   },
 ];
 
