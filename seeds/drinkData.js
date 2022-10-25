@@ -1,4 +1,4 @@
-const { Drink } = require('../models');
+const { Item } = require('../models');
 
 const drinkData = [
   {
@@ -39,6 +39,6 @@ const drinkData = [
   },
 ];
 
-const seedDrink = () => Drink.bulkCreate(drinkData);
+const seedDrink = () => Item.bulkCreate(drinkData);
 
 module.exports = seedDrink;
