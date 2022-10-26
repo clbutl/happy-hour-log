@@ -4,38 +4,38 @@ const locationData = [
   {
     "restaurantName": 'Chilis',
     "restaurantCity": 'Columbus',
-    "happyHourTimeStart": '16:00',
-    "happyHourTimeEnd": '18:00'
+    "happyHourTimeStart": 4,
+    "happyHourTimeEnd": 6
   },
   {
     "restaurantName": 'Rusty bucket',
     "restaurantCity": 'Cleveland',
-    "happyHourTimeStart": '16:00',
-    "happyHourTimeEnd": '18:00'
+    "happyHourTimeStart": 4,
+    "happyHourTimeEnd": 7
   },
   {
     "restaurantName": 'Applebees',
     "restaurantCity": 'New York City',
-    "happyHourTimeStart": '16:30',
-    "happyHourTimeEnd": '18:30'
+    "happyHourTimeStart": 5,
+    "happyHourTimeEnd": 8
   },
   {
     "restaurantName": 'BJs',
     "restaurantCity": 'Houston',
-    "happyHourTimeStart": '16:00',
-    "happyHourTimeEnd": '18:00'
+    "happyHourTimeStart": 6,
+    "happyHourTimeEnd": 8
   },
   {
     "restaurantName": 'Buffalo Wild Wings',
     "restaurantCity": 'San Diego',
-    "happyHourTimeStart": '17:00',
-    "happyHourTimeEnd": '19:00'
+    "happyHourTimeStart": 5,
+    "happyHourTimeEnd": 7
   },
   {
     "restaurantName": 'Olive Garden',
     "restaurantCity": 'Miami',
-    "happyHourTimeStart": '16:00',
-    "happyHourTimeEnd": '20:00'
+    "happyHourTimeStart": 4,
+    "happyHourTimeEnd": 7
   }
 ];
 
