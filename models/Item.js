@@ -41,6 +41,13 @@ Item.init(
         model: 'location',
         key: 'id',
       },
+    },
+    userCreated: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
   },
   {
