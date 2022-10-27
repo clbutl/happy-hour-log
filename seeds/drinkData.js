@@ -10,6 +10,7 @@ const drinkData = [
     "dealDay": "Monday",
     "locationId": 1,
     "userCreated": 1,
+
   },
   {
     "isFood": false,
@@ -20,6 +21,7 @@ const drinkData = [
     "dealDay": "Tuesday",
     "locationId": 2,
     "userCreated": 3,
+
   },
   {
     "isFood": false,
@@ -30,6 +32,7 @@ const drinkData = [
     "dealDay": null,
     "locationId": 3,
     "userCreated": 4,
+
   },
   {
     "isFood": false,
@@ -40,6 +43,7 @@ const drinkData = [
     "dealDay": "Wednesday",
     "locationId": 3,
     "userCreated": 2,
+
   },
 ];
 

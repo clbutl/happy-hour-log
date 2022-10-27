@@ -57,7 +57,6 @@ const foodData = [
     "price": 11.99,
     "originalPrice": 13.00,
     "dealType": 'Single day',
-    "dealDay": 'Tuesday',
     "locationId": 3,
     "userCreated": 5,
   }

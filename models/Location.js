@@ -20,11 +20,11 @@ Location.init(
       allowNull: false,
     },
     happyHourTimeStart: {
-      type: DataTypes.TIME,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     happyHourTimeEnd: {
-      type: DataTypes.TIME,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
