@@ -9,7 +9,7 @@ const drinkData = [
     "dealType": "single day",
     "dealDay": "Monday",
     "locationId": 1,
-    "userCreated": 1,
+    "userId": 1,
 
   },
   {
@@ -20,7 +20,7 @@ const drinkData = [
     "dealType": "single day",
     "dealDay": "Tuesday",
     "locationId": 2,
-    "userCreated": 3,
+    "userId": 3,
 
   },
   {
@@ -31,7 +31,7 @@ const drinkData = [
     "dealType": "everyday",
     "dealDay": null,
     "locationId": 3,
-    "userCreated": 4,
+    "userId": 4,
 
   },
   {
@@ -42,7 +42,7 @@ const drinkData = [
     "dealType": "single day",
     "dealDay": "Wednesday",
     "locationId": 3,
-    "userCreated": 2,
+    "userId": 2,
 
   },
 ];

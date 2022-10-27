@@ -9,7 +9,7 @@ const foodData = [
     "dealType": 'Single day',
     "dealDay": 'Thursday',
     "locationId": 5,
-    "userCreated": 3,
+    "userId": 3,
   },
   {
     "isFood": true,
@@ -19,7 +19,7 @@ const foodData = [
     "dealType": 'Single day',
     "dealDay": 'Friday',
     "locationId": 1,
-    "userCreated": 1,
+    "userId": 1,
   },
   {
     "isFood": true,
@@ -29,7 +29,7 @@ const foodData = [
     "dealType": 'Everyday',
     "dealDay": null,
     "locationId": 4,
-    "userCreated": 2,
+    "userId": 2,
   },
   {
     "isFood": true,
@@ -39,7 +39,7 @@ const foodData = [
     "dealType": 'Everyday',
     "dealDay": null,
     "locationId": 6,
-    "userCreated": 4,
+    "userId": 4,
   },
   {
     "isFood": true,
@@ -49,7 +49,7 @@ const foodData = [
     "dealType": 'Single day',
     "dealDay": 'Wednesday',
     "locationId": 2,
-    "userCreated": 5,
+    "userId": 5,
   },
   {
     "isFood": true,
@@ -58,7 +58,7 @@ const foodData = [
     "originalPrice": 13.00,
     "dealType": 'Single day',
     "locationId": 3,
-    "userCreated": 5,
+    "userId": 5,
   }
 ];
 
