@@ -30,20 +30,20 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      console.log('EIncorrect email or password, please try again')
+      console.log('Incorrect email or password, please try again')
       res
         .status(400)
-        .json({ message: 'EIncorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      console.log('PIncorrect email or password, please try again')
+      console.log('Incorrect email or password, please try again')
       res
         .status(400)
-        .json({ message: 'PIncorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
