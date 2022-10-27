@@ -2,9 +2,22 @@ const router = require('express').Router();
 const { User, Item, Location } = require('../models');
 const authUser = require('../utils/auth');
 
+// USING MULTER
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./models/userImages")
+  },
+  filename: (req, file, cb) => {
+    console.log(file)
+    cb(null, req.session.user_id + ' Profile Picture.jpg')
+  }
+})
+const upload = multer({ storage: storage })
+
+
 router.get('/', async (req, res) => {
   try {
-    
     console.log('Render Homepage lol')
     // res.render('homepage', {
     //   // galleries,
@@ -33,6 +46,50 @@ router.get('/users/:id', authUser, async (req, res) => {
   }
 })
 
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login')
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.get('/upload/:username', async (req, res) => {
+  try{
+    const userData = await User.findAll({
+      where: {
+        username: req.params.username
+      } 
+    })
+    const user = userData.map((user) => user.get({ plain: true }))
+    console.log('------------')
+    console.log(user)
+    console.log('------------')
+    res.render('upload', { user })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.post('/upload/:username', upload.single('image'), async (req, res) => {
+  try {
+    // const userData = await User.findAll({
+    //   where: {
+    //     username: req.params.username
+    //   } 
+    // })
+    // const user = userData.map((user) => user.get({ plain: true }))
+
+    res.render('profile')
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 // Hopefully this works
 router.get('/profile', authUser, async (req, res) => {
   try {
@@ -52,6 +109,7 @@ router.get('/profile', authUser, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 
 module.exports = router;
