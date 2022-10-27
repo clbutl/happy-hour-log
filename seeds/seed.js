@@ -10,16 +10,14 @@ const seedAll = async () => {
   await seedLocation();
   console.log('---SEEDED LOCATION---')
   
+  await seedUser();
+  console.log('---SEEDED USER---')
+
   await seedDrink();
   console.log('---SEEDED DRINK---')
   
   await seedFood();
   console.log('---SEEDED FOOD---')
-  
-  await seedUser();
-  console.log('---SEEDED USER---')
-
-  
 
   process.exit(0);
 };
