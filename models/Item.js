@@ -42,6 +42,13 @@ Item.init(
         key: 'id',
       },
     },
+    userCreated: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
