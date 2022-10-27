@@ -41,7 +41,7 @@ Item.init(
         model: 'location',
         key: 'id',
       },
-    }
+    },
   },
   {
     sequelize,
