@@ -12,12 +12,12 @@ Item.belongsTo(Location, {
 });
 
 User.hasMany(Item, {
-  foreignKey: 'userCreated',
+  foreignKey: 'userId',
   onDelete: 'CASCADE'
 })
 
 Item.belongsTo(User, {
-  foreignKey: 'userCreated'
+  foreignKey: 'userId'
 })
 
 module.exports = { User, Item, Location };

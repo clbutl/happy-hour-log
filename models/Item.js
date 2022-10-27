@@ -42,7 +42,7 @@ Item.init(
         key: 'id',
       },
     },
-    userCreated: {
+    userId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
