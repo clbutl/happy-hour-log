@@ -14,23 +14,24 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    const allUsers = await User.findAll()
-
-    const allUsernames = allUsers.map((user) => user.get({ plain: true }))
-    for (let i = 0; i < allUsernames.length; i++) {
-      console.log(allUsernames[i].username)
-      if (userData.username === allUsernames[i].username) {
-        window.alert('Username is already taken :(')
-        res.message('USERNAME TAKEN')
-        break;
-      }
-    }
+    // const allUsers = await User.findAll()
+    console.log(userData)
+  
+    // const allUsernames = allUsers.map((user) => user.get({ plain: true }))
+    // for (let i = 0; i < allUsernames.length; i++) {
+    //   if (userData.username === allUsernames[i].username) {
+    //     window.alert('Username is already taken :(')
+    //     res.message('USERNAME TAKEN')
+    //     break;
+    //   }
+    // }
     
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.user_username = userData.username;
       req.session.logged_in = true;
+      res.status(200).json(userData);
     });
-    res.status(200).json(userData);
   } catch (err) {
     res.status(404).json(err);
   }
