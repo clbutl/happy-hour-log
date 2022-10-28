@@ -1,0 +1,25 @@
+{{#each users as |user| }}
+<div class="row mb-4 item">
+  <div class="col-md-5">
+
+    <h3>
+      <a href="/users/{{user.id}}">{{user.username}}</a>
+    </h3>
+
+    <hr>
+
+    {{!-- <h4>{{user.location.restaurant_name}}</h4> --}}
+
+    <ul>
+        <li>Item: {{user.item.name}}</li>
+        <li>Deal: {{user.item.price}}</li>
+        <li>Original price: {{user.item.originalPrice}}</li>
+        <li>Deal day: {{user.item.dealDay}}</li>
+        <li>Deal type: {{user.item.dealType}}</li>
+
+    </ul>
+   
+  </div>
+</div>
+
+{{/each}}
