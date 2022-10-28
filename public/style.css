@@ -12,7 +12,7 @@
   flex-wrap: wrap;
 } .login-inputs {
   font-size: 30px;
-} container {
+} .login-card {
   border: 1px solid black;
 } #profile-pic {
   border-radius: 50px;
@@ -20,9 +20,14 @@
   cursor: pointer;
 } .link {
   cursor: pointer;
+} header {
+  border-bottom: 1px solid black;
+  background-color: aliceblue;
 }
 
-
+.hidden {
+  display: none;
+}
 
 .div-header h1 {
   font-weight: bold;
@@ -47,4 +52,6 @@
   border: 1px solid red;
 } .black-border {
   border: 1px solid black;
+} .error-color {
+  color: red;
 }

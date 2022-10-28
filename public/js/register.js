@@ -5,6 +5,7 @@ const registerFormHandler = async (event) => {
   const email = document.querySelector('#email-register').value.trim();
   const password = document.querySelector('#password-register').value.trim();
   const username = document.querySelector('#username-register').value.trim();
+  const errorMsg = document.querySelector('#error-message-register')
 
   if (email && password && username) {
     // Send a POST request to the API endpoint
@@ -13,9 +14,11 @@ const registerFormHandler = async (event) => {
       body: JSON.stringify({ email, password, username }),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(response)
     if (response.ok) {
+      errorMsg.classList.add('hidden')
       document.location.replace('/profile');
+    } else {
+      errorMsg.classList.remove('hidden')
     }
   }
 };
@@ -23,3 +26,10 @@ const registerFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', registerFormHandler);
+
+document
+  .querySelector('#login-btn')
+  .addEventListener( 'click', function(event) {
+    event.preventDefault()
+    document.location.replace('/login')
+  })
