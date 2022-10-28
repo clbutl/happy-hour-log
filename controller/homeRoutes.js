@@ -46,6 +46,15 @@ router.get('/users/:id', authUser, async (req, res) => {
   }
 })
 
+router.get('/register', async (req, res) => {
+  try {
+    res.render('register')
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 router.get('/login', async (req, res) => {
   try {
     res.render('login')
