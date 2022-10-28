@@ -22,9 +22,9 @@ const userData = [
     "password": "DummyData3",
   },
   {
-    "username": "dummyData4",
-    "email": "dummayData4@gmail.com",
-    "password": "DummyData4",
+    "username": "test",
+    "email": "test@gmail.com",
+    "password": "$2b$10$oone1oX2EGXskQv4laal1OIgkrdNzWkGrehKJvPHfFtIQnV.YdwnS",
   },
 ];
 
