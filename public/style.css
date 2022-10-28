@@ -16,7 +16,11 @@
   border: 1px solid black;
 } #profile-pic {
   border-radius: 50px;
-} 
+} #profile-pic:hover {
+  cursor: pointer;
+} .link {
+  cursor: pointer;
+}
 
 
 

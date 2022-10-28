@@ -13,11 +13,11 @@
 <div class="div-header">
     <h1>TITLE HERE</h1>
     <nav class="">
-      {{!-- {{#if LoggedIn}} --}}
-      <img id="profile-pic" class="black-border" src="./Default LoggedIn.jpg" height="75px" alt="Login">
-      {{!-- {{else}}
-      <img id="profile-pic" class="red-border" src="./Default LoggedIn.jpg" height="75px" alt="Login">
-      {{/if}} --}}
+      {{#if LoggedIn}}
+      <img id="profile-pic" class="black-border" href="/profile" src="./defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+      {{else}}
+      <img id="profile-pic" class="red-border" href="/profile" src="./defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+      {{/if}}
     </nav>
 </div>
 
