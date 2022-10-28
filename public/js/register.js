@@ -17,7 +17,11 @@ const registerFormHandler = async (event) => {
     if (response.ok) {
       errorMsg.classList.add('hidden')
       document.location.replace('/profile');
+    } else if (response.status === 400) {
+      errorMsg.textContent = 'Username is already taken'
+      errorMsg.classList.remove('hidden')
     } else {
+      errorMsg.textContent = 'Unable to create account with these credentials'
       errorMsg.classList.remove('hidden')
     }
   }
