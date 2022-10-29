@@ -25,7 +25,7 @@ router.post('/', sameUser, async (req, res) => {
   } catch (err) {
     req.session.destroy(() => {
       console.log(err)
-      res.status(500).json(userData);
+      res.status(500).end();
     });
   } 
   })
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     req.session.destroy(() => {
       console.log(err)
-      res.status(500).json(userData);
+      res.status(500).end();
     });
   }
 });
