@@ -18,7 +18,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       showError.classList.add('hidden')
-      document.location.replace('/profile');
+      document.location.replace(`/profile`);
     } else {
       showError.classList.remove('hidden')
     }

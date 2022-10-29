@@ -6,7 +6,7 @@ const sameUser = async (req, res, next) => {
   if (allUsers === null) {
     next()
   } else {
-    res.status(400).json('yoo')
+    res.status(400).json('Username is already taken')
     return;
   }
 };
