@@ -23,8 +23,10 @@ router.post('/', sameUser, async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(500).json(err)
-    console.log(err)
+    req.session.destroy(() => {
+      console.log(err)
+      res.status(500).end();
+    });
   } 
   })
 
@@ -57,8 +59,10 @@ router.post('/login', async (req, res) => {
       res.status(200).json({ message: 'You are now logged in!' })
     });
   } catch (err) {
-    res.status(500).json(err)
-    console.log(err)
+    req.session.destroy(() => {
+      console.log(err)
+      res.status(500).end();
+    });
   }
 });
 
