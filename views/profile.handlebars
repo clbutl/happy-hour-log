@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.username}}!</h2>
   </div>
 </div>
 
@@ -9,15 +9,18 @@
     <h3>Current Posts:</h3>
 
     {{#each items as |item|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/api/item/{{item.id}}">{{item.name}}</a></h4>
-        <h4><a href="/api/item/{{item.id}}">{{item.price}}</a></h4>
-        <h4><a href="/api/item/{{item.id}}">{{item.originalPrice}}</a></h4>
-        <h4><a href="/api/item/{{item.id}}">{{item.dealDay}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{item.id}}">DELETE</button>
+    <div class="row mb-4 item">
+      <div class="col-md-5">
+        <hr>
+        <h4>{{item.location.restaurant_name}}</h4>
+        <h4>{{item.location.restaurant_city}}</h4>
+        <ul>
+            <li>Item: {{item.name}}</li>
+            <li>Deal: {{item.price}}</li>
+            <li>Original price: {{item.originalPrice}}</li>
+            <li>Deal day: {{item.dealDay}}</li>
+            <li>Deal type: {{item.dealType}}</li>
+        </ul> 
       </div>
     </div>
     {{/each}}
