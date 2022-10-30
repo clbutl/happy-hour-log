@@ -5,7 +5,6 @@ html, body {
   min-height: 88%;
 }
 
-
 .main-card {
   display: block;
   justify-content: center;
@@ -84,3 +83,14 @@ html, body {
   height: 50px;
   font-size: 30px;
 }
+
+.card-header{
+  text-align: center;
+}
+
+#homeCard{
+
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.197);
+  
+}
+
