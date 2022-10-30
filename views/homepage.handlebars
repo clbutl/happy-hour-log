@@ -1,11 +1,10 @@
 {{#each items as |item| }}
 
-
-  <div  id="homeCard" class="card p-3" style="width: 25rem;" >
+  <div  id="homeCard" class="card p-3" style="width: 25rem; display:inline-block; margin: 20px;" >
      <div class="card-header">
   
      <h3>
-      <a id="userId" href="/users/{{item.user.id}}">{{item.user.username}}</a>
+      <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
     </h3>
 
   </div>
