@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const sameUser = require('../../utils/sameUser')
 
 router.get('/', async (req, res) => {
   try {
@@ -11,20 +12,9 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', sameUser, async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    // const allUsers = await User.findAll()
-    console.log(userData)
-  
-    // const allUsernames = allUsers.map((user) => user.get({ plain: true }))
-    // for (let i = 0; i < allUsernames.length; i++) {
-    //   if (userData.username === allUsernames[i].username) {
-    //     window.alert('Username is already taken :(')
-    //     res.message('USERNAME TAKEN')
-    //     break;
-    //   }
-    // }
     
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -33,9 +23,12 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(404).json(err);
-  }
-});
+    req.session.destroy(() => {
+      console.log(err)
+      res.status(500).end();
+    });
+  } 
+  })
 
 router.post('/login', async (req, res) => {
   try {
@@ -64,11 +57,12 @@ router.post('/login', async (req, res) => {
       req.session.user_username = userData.username;
       req.session.logged_in = true;
       res.status(200).json({ message: 'You are now logged in!' })
-      console.log(req.session.user_username)
     });
   } catch (err) {
-    res.status(500).json(err)
-    console.log(err)
+    req.session.destroy(() => {
+      console.log(err)
+      res.status(500).end();
+    });
   }
 });
 

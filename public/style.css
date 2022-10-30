@@ -1,3 +1,10 @@
+html, body {
+  height: 100%;
+}
+#wrapper {
+  min-height: 88%;
+}
+
 .main-card {
   display: block;
   justify-content: center;
@@ -12,17 +19,24 @@
   flex-wrap: wrap;
 } .login-inputs {
   font-size: 30px;
-} container {
-  border: 1px solid black;
 } #profile-pic {
   border-radius: 50px;
 } #profile-pic:hover {
   cursor: pointer;
 } .link {
   cursor: pointer;
+} header {
+  border-bottom: 1px solid black;
+  background-color: rgb(206, 206, 206);
+  min-height: 12%;
+} #login-container {
+  box-shadow: 1px 1px 50px black;
+  background-color: rgb(153, 193, 216);
 }
 
-
+.hidden {
+  display: none;
+}
 
 .div-header h1 {
   font-weight: bold;
@@ -32,7 +46,7 @@
 } .div-header {
   display: inline-flex;
   justify-content: space-between;
-  height: 100px;
+  height: 10%;
   align-items: center;
   width: 100%;
   padding: 0% 2.5%;
@@ -47,4 +61,36 @@
   border: 1px solid red;
 } .black-border {
   border: 1px solid black;
+} .error-color {
+  color: red;
 }
+
+
+#register-btn, #login-btn {
+  border: 0;
+  background-color: rgb(153, 193, 216);
+  color: #0067b8;
+} #register-btn:hover, #login-btn:hover {
+  text-decoration: underline;
+  transition-duration: 500ms;
+} .list-group {
+  width: 85%;
+} .main-login {
+  background: linear-gradient(45deg, rgb(202, 202, 211), rgb(114, 102, 102), rgb(94, 99, 99));
+  padding-top: 7%;
+} .list-group button {
+  border: 1px solid gray;
+  height: 50px;
+  font-size: 30px;
+}
+
+.card-header{
+  text-align: center;
+}
+
+#homeCard{
+
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.197);
+  
+}
+

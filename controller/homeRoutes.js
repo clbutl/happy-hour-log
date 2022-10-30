@@ -29,7 +29,10 @@ router.get('/', async (req, res) => {
   const items = itemData.map((item) => item.get({ plain: true }));
 
   // Pass serialized data into Handlebars.js template
-    res.render('homepage', { items });
+    res.render('homepage', {
+       items, 
+       logged_in: req.session.logged_in 
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -54,6 +57,10 @@ router.get('/users/:id', authUser, async (req, res) => {
 
 router.get('/register', async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
     res.render('register')
   } catch (err) {
     console.log(err);
@@ -63,7 +70,11 @@ router.get('/register', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   try {
-    res.render('login')
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
+    res.render('login');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -115,15 +126,32 @@ router.get('/profile', authUser, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+    console.log(req.session.logged_in)
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+router.get('/profile/:username', authUser, async (req, res) => {
+  try {
+    const currentUser = await User.findOne({ where: { username: req.params.username } })
+
+    const userData = currentUser.get({ plain: true });
+    console.log(req.session.logged_in)
+    res.render('profile', {
+      ...userData,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+})
 
 
 
