@@ -1,6 +1,7 @@
+{{#if canEdit}}
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{user.username}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
@@ -30,5 +31,36 @@
     Log Out
   </button>
 </div>
+{{else}}
+<div class="row">
+  <div class="col-auto">
+    <h2>{{username}}'s Profile</h2>
+  </div>
+</div>
+
+  {{#if items.length}}
+  <div class="col-md-6 project-list">
+    <h3>Their Current Posts:</h3>
+
+    {{#each items as |item|}}
+    <div class="row mb-4 item">
+      <div class="col-md-5">
+        <hr>
+        <h4>{{item.location.restaurant_name}}</h4>
+        <h4>{{item.location.restaurant_city}}</h4>
+        <ul>
+            <li>Item: {{item.name}}</li>
+            <li>Deal: {{item.price}}</li>
+            <li>Original price: {{item.originalPrice}}</li>
+            <li>Deal day: {{item.dealDay}}</li>
+            <li>Deal type: {{item.dealType}}</li>
+        </ul> 
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+{{/if}}
 
 <script src="./js/profile.js"></script>
