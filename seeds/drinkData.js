@@ -9,7 +9,7 @@ const drinkData = [
     "dealType": "single day",
     "dealDay": "Monday",
     "locationId": 1,
-    "userId": 1,
+    "userId": 5,
 
   },
   {
@@ -20,7 +20,7 @@ const drinkData = [
     "dealType": "single day",
     "dealDay": "Tuesday",
     "locationId": 2,
-    "userId": 3,
+    "userId": 5,
 
   },
   {

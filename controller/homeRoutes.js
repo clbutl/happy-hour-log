@@ -116,17 +116,18 @@ router.post('/upload/:username', upload.single('image'), async (req, res) => {
   }
 })
 
-// Hopefully this works
+// Profile route
 router.get('/profile', authUser, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Item }],
+      include: [{ model: Item, Location }],
     });
 
     const user = userData.get({ plain: true });
     console.log(req.session.logged_in)
+    console.log(user)
 
     res.render('profile', {
       ...user,
