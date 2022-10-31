@@ -9,22 +9,35 @@
   <div class="col-md-6 project-list">
     <h3>Current Posts:</h3>
 
-    {{#each items as |item|}}
-    <div class="row mb-4 item">
-      <div class="col-md-5">
-        <hr>
-        <h4>{{item.location.restaurant_name}}</h4>
-        <h4>{{item.location.restaurant_city}}</h4>
-        <ul>
-            <li>Item: {{item.name}}</li>
-            <li>Deal: {{item.price}}</li>
-            <li>Original price: {{item.originalPrice}}</li>
-            <li>Deal day: {{item.dealDay}}</li>
-            <li>Deal type: {{item.dealType}}</li>
-        </ul> 
-      </div>
-    </div>
-    {{/each}}
+    {{#each items as |item| }}
+
+  <div  id="homeCard" class="card p-3" style="width: 25rem; display:inline-block; margin: 20px;" >
+     <div class="card-header">
+  
+     <h3>
+      <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
+    </h3>
+
+  </div>
+    <blockquote class="blockquote mb-0 card-body">
+
+    <ul class="list-group list-group-flush">
+
+    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurant_name}}</li>
+    <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
+    <li class="list-group-item"><strong>Price:</strong> ${{item.price}}</li>
+    <li class="list-group-item"><strong>Original price:</strong> ${{item.originalPrice}}</li>
+    <li class="list-group-item"><strong>Deal day:</strong> {{item.dealDay}}</li>
+    <li class="list-group-item"><strong>Deal type:</strong> {{item.dealType}}</li>
+
+  </ul>
+      
+    </blockquote>
+  </div>
+
+</div>
+</div>
+{{/each}}
   </div>
   {{/if}}
   <button id="logout-btn" class="d-flex justify-content-center text-center">
