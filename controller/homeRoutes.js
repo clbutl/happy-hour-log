@@ -21,16 +21,18 @@ router.get('/', async (req, res) => {
   try {
    
     const itemData = await Item.findAll({
-      include: [{model: User, Location}], 
+      include: {all: true, nested: true},
       // order: [['name', 'DSC']],
     });
 
     // Serialize user data so templates can read it
   const items = itemData.map((item) => item.get({ plain: true }));
 
+
   // Pass serialized data into Handlebars.js template
     res.render('homepage', {
        items, 
+
        logged_in: req.session.logged_in 
       });
   } catch (err) {
@@ -122,7 +124,7 @@ router.get('/profile', authUser, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Item, Location }],
+      include: {all: true, nested: true},
     });
 
     const user = userData.get({ plain: true });
