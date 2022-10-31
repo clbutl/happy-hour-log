@@ -26,6 +26,12 @@ if (document.querySelector('.login-btn')) {
 })
 }
 
+const goHome = () => {
+  document.location.replace('/')
+}
+
+document.querySelector('#home-btn')
+.addEventListener('click', goHome)
 
 
 
