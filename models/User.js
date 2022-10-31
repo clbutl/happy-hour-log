@@ -1,10 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const registrationEmail = require('../public/js/nodemailer')
 
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return bcrypt.compareSync(loginPw, this.password, this.email);
   }
 }
 
@@ -40,6 +41,7 @@ User.init(
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        registrationEmail(newUserData.email);
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {

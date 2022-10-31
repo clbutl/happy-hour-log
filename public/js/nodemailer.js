@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const registrationEmail = (email) => {
+const registrationEmail = async (email) => {
   const transporter = nodemailer.createTransport({
     service: "hotmail",
     auth: {
@@ -11,7 +11,7 @@ const registrationEmail = (email) => {
   
   const options = {
     from: "happyhourlog123@outlook.com",
-    to: `${email}`,
+    to: email,
     subject: "Welcome to the log!",
     text: "Welcome! Log in to your profile to view your posts!"
   };

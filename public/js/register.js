@@ -1,5 +1,3 @@
-//const registrationEmail = require('./nodemailer');
-
 const registerFormHandler = async (event) => {
   event.preventDefault();
 
@@ -18,8 +16,6 @@ const registerFormHandler = async (event) => {
     });
     if (response.ok) {
       errorMsg.classList.add('hidden');
-      // registrationEmail(email.value);
-      console.log(email)
       document.location.replace('/profile');
     } else if (response.status === 400) {
       errorMsg.textContent = 'Username is already taken'
