@@ -4,7 +4,7 @@
      <div class="card-header">
   
      <h3>
-      <a  href="/profile/{{item.user.username}}">{{item.user.username}}</a>
+      <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
     </h3>
 
   </div>
@@ -12,7 +12,7 @@
 
     <ul class="list-group list-group-flush">
 
-    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurant_name}}</li>
+    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurantName}}</li>
     <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
     <li class="list-group-item"><strong>Price:</strong> ${{item.price}}</li>
     <li class="list-group-item"><strong>Original price:</strong> ${{item.originalPrice}}</li>
