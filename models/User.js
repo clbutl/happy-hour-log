@@ -5,7 +5,7 @@ const registrationEmail = require('../public/js/nodemailer')
 
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password, this.email);
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -40,8 +40,8 @@ User.init(
   {
     hooks: {
       beforeCreate: async (newUserData) => {
+        registrationEmail(newUserData.email, newUserData.username, newUserData.password);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        registrationEmail(newUserData.email);
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
