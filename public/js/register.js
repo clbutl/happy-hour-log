@@ -15,7 +15,7 @@ const registerFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      errorMsg.classList.add('hidden')
+      errorMsg.classList.add('hidden');
       document.location.replace('/profile');
     } else if (response.status === 400) {
       errorMsg.textContent = 'Username is already taken'

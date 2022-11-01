@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const registrationEmail = require('../public/js/nodemailer')
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -39,6 +40,7 @@ User.init(
   {
     hooks: {
       beforeCreate: async (newUserData) => {
+        registrationEmail(newUserData.email, newUserData.username, newUserData.password);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },

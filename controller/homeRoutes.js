@@ -21,16 +21,18 @@ router.get('/', async (req, res) => {
   try {
    
     const itemData = await Item.findAll({
-      include: [{model: User, Location}], 
+      include: {all: true, nested: true},
       // order: [['name', 'DSC']],
     });
 
     // Serialize user data so templates can read it
   const items = itemData.map((item) => item.get({ plain: true }));
 
+
   // Pass serialized data into Handlebars.js template
     res.render('homepage', {
        items, 
+
        logged_in: req.session.logged_in 
       });
   } catch (err) {
@@ -116,21 +118,24 @@ router.post('/upload/:username', upload.single('image'), async (req, res) => {
   }
 })
 
-// Hopefully this works
+// Profile route
 router.get('/profile', authUser, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Item }],
+      include: {all: true, nested: true},
     });
 
     const user = userData.get({ plain: true });
+
     console.log(req.session.logged_in)
+    console.log(user)
 
     res.render('profile', {
       ...user,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      canEdit: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -139,19 +144,44 @@ router.get('/profile', authUser, async (req, res) => {
 
 router.get('/profile/:username', authUser, async (req, res) => {
   try {
-    const currentUser = await User.findOne({ where: { username: req.params.username } })
+    let canEdit;
+    let userId;
+    const allUserData = await User.findAll()
+    allUserData.forEach((item, index) => {
+      if (item.username === req.params.username) {
+        if (item.username === req.session.user_username) {
+          canEdit = true
+          userId = req.session.user_id
+        } else {
+          canEdit = false
+          userId = Number(index) + 1
+        }
+      }
+    })
+    const userData = await User.findByPk(userId, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Item }],
+    });
 
-    const userData = currentUser.get({ plain: true });
-    console.log(req.session.logged_in)
+    let user;
+    if (userData.get({ plain: true }) === null) {
+      user = userData
+    } else {
+      user = userData.get({ plain: true })
+    }
+    
+
     res.render('profile', {
-      ...userData,
-      logged_in: req.session.logged_in
+      ...user,
+      logged_in: req.session.logged_in,
+      canEdit: canEdit
     });
   } catch (err) {
     console.log(err)
-    res.status(500).json(err);
+    res.redirect('/')
   }
 })
+
 
 
 

@@ -4,6 +4,8 @@ html, body {
 }
 #wrapper {
   min-height: 88%;
+} #home-btn:hover {
+  cursor: pointer;
 }
 
 .main-card {
