@@ -20,6 +20,7 @@
 </div>
 {{/each}}
 
+{{#if logged_in}}
 <form id="homepageForm" style="width: 40rem; height:40rem;">
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Item name:</label>
@@ -75,5 +76,6 @@
     </div>
   </div>
 </form>
+{{/if}}
 
 <script src="./js/homepage.js"></script>
