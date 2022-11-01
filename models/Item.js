@@ -27,9 +27,13 @@ Item.init(
       type: DataTypes.DECIMAL,
       allowNull: true,
     },
-    dealType: {
-      type: DataTypes.STRING, // everyday, single day
-      allowNull: false, 
+    startTime: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    endTime: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     dealDay: {
       type: DataTypes.STRING,
