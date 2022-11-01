@@ -1,20 +1,5 @@
 
 
-// const postRestaurant = async (event) => {
-//   event.preventDefault();
-
-//   const restaurant = document.getElementById('restaurant').value.trim();
-
-//   if(restaurant){
-//     const response = await fetch('/api/item', {
-//       method: 'POST',
-//       body: JSON.stringify({restaurant}),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-//   }
-
-// }
-
 const postNewDeal = async (event) => {
     event.preventDefault();
 
@@ -24,6 +9,9 @@ const postNewDeal = async (event) => {
   const end = document.getElementById('end-time').value.trim();
   const dealDay = document.getElementById('day').value.trim();
   const food = document.getElementById('food').value;
+  const drink = document.getElementById('drink').value;
+  const restaurant = document.getElementById('restaurant').value.trim();
+
   
  console.log(itemName,
   discount,
@@ -31,13 +19,23 @@ const postNewDeal = async (event) => {
   end,
   dealDay,
   food,
+  drink
   )
+if(food){
+
+  food.value = true;
+}else{
+
+  food.value = false;
+
+
+}
 
 if(itemName && discount && start && end && dealDay && food){
   console.log('hit');
         const response = await fetch('/api/item', {
             method: 'POST',
-            body: JSON.stringify({name: itemName, price: discount, timeStart: start, timeEnd: end, dealDay: dealDay, isFood: food}),
+            body: JSON.stringify({name: itemName, price: discount, startTime: start, endTime: end, dealDay: dealDay, isFood: food, restaurantName: restaurant}),
             headers: { 'Content-Type': 'application/json' },
           });
 if(response.ok ){
@@ -45,11 +43,11 @@ if(response.ok ){
   document.location.replace('/');
   
  
-}else if(itemName && discount && start && end && dealDay ){
+}else if(itemName && discount && start && end && dealDay && drink){
 
   const response = await fetch('/api/item', {
     method: 'POST',
-    body: JSON.stringify({itemName, discount, start, end, dealDay}),
+    body: JSON.stringify({name: itemName, price: discount, timeStart: start, timeEnd: end, dealDay: dealDay, isFood: drink, location: restaurant}),
     headers: { 'Content-Type': 'application/json' },
   });
 
