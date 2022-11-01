@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  background: linear-gradient(45deg, rgb(226, 224, 224), rgb(173, 171, 171), rgb(149, 147, 147));
 
 }
 #wrapper {
@@ -150,6 +151,10 @@ html, body {
   padding: 10px;
   font-family: cursive;
   font-weight:900;
+}
+#res{
+  text-align: center;
+  font-family: cursive;
 }
 
 
