@@ -83,6 +83,17 @@ router.get('/login', async (req, res) => {
   }
 })
 
+// Post route
+router.get('/post', authUser, async (req, res) => {
+  try {
+    res.render('post', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Profile route
 router.get('/profile', authUser, async (req, res) => {
   try {
