@@ -1,23 +1,27 @@
 {{#each items as |item| }}
  
-  <div class="card mb-3" style="width: 25rem; margin: 20px; display: inline-block;">
-  <div class="card-header"><a id="hp-head" href="/users/{{item.user.id}}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+ <div class="card" style="width: 25rem; height:25rem; display: inline-block; margin: 20px; border-radius: 10px; ">
+  <div class="card-header">
+    <a id="hp-head" href="/users/{{item.user.id}}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
 </svg>{{item.user.username}}</a>
-</div>
-  <div class="card-body" style=" height:20rem; margin: 0 auto; color: whitesmoke; padding: 3rem;">
-    <h5 class="card-title">{{item.location.restaurantName}}</h5>
-    {{!-- <hr> --}}
-    <p class="card-text">${{item.price}} {{item.name}}</p>
-    <div class="card-footer">
-  <p class="card-text">{{item.dealDay}}</p>
-    <p class="card-text">from  {{item.timeStart}}pm - {{item.timeEnd}}pm</p>
-    </div>
-</div>
   </div>
+
+  <ul class="list-group list-group-flush" style=" padding:20px; margin: 0 auto; border-radius: 10px; margin-top: 10px;  background: linear-gradient(45deg,rgb(225, 233, 240), rgb(197, 221, 238),rgb(160, 207, 244)); ">
+
+    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurantName}}</li>
+    <li class="list-group-item"><strong>Happy Hour Deal:</strong> ${{item.price}}</li>
+    <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
+    <li class="list-group-item"><strong>Deal Day(s):</strong> {{item.dealDay}}</li>
+    <li class="list-group-item"><strong>Time:</strong> {{item.startTime}}pm - {{item.endTime}}pm</li>
+
+  </ul>
 </div>
 
-<form id="homepageForm" style="width: 40rem; height:40rem;">
+{{/each}}
+
+<form id="homepageForm" style="width: 40rem; height:42rem;">
+  <h5 id="form-heading">POST A DEAL</h5>
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Item name:</label>
     <div class="col-sm-10">
@@ -56,19 +60,22 @@
   </div>
   <fieldset class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Food Item:</legend>
+      <legend class="col-form-label col-sm-2 pt-0">Item:</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input id="food"class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="true">
-        
+          <input id="food" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value='true'>
+        Food
         </div>
-        
+        <div class="form-check">
+          <input id="drink" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value='false'>
+          Drink
+        </div>
       </div>
     </div>
   </fieldset>
   <div class="form-group row">
     <div id="submitBtn" class="col-sm-10">
-      <button class="form-btn" type="submit"  class="btn btn-primary">Submit</button>
+      <button  id="s-btn" class="form-btn" type="submit"  class="btn btn-primary">Submit</button>
     </div>
   </div>
 </form>
