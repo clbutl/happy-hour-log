@@ -83,41 +83,6 @@ router.get('/login', async (req, res) => {
   }
 })
 
-router.get('/upload/:username', async (req, res) => {
-  try{
-    const userData = await User.findAll({
-      where: {
-        username: req.params.username
-      } 
-    })
-    const user = userData.map((user) => user.get({ plain: true }))
-    console.log('------------')
-    console.log(user)
-    console.log('------------')
-    res.render('upload', { user })
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-})
-
-router.post('/upload/:username', upload.single('image'), async (req, res) => {
-  try {
-    // const userData = await User.findAll({
-    //   where: {
-    //     username: req.params.username
-    //   } 
-    // })
-    // const user = userData.map((user) => user.get({ plain: true }))
-
-    res.render('profile')
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-})
-
 // Profile route
 router.get('/profile', authUser, async (req, res) => {
   try {
