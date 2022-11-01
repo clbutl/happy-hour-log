@@ -95,6 +95,8 @@ html, body {
 }
 .card{
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.34);
+  background: linear-gradient(45deg, rgb(100, 111, 117), rgb(104, 128, 152), rgb(13, 49, 61));
+  border: 1px solid transparent;
 
 }
 #hp-head{
@@ -104,25 +106,22 @@ html, body {
   font-weight: bold; 
 
 }
-.card-body, .card-header{
+.card-header{
   background: linear-gradient(45deg, rgb(100, 111, 117), rgb(104, 128, 152), rgb(13, 49, 61));
   border: 1px solid transparent;
 
 }
-.card-title{
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
-  font-weight: bold; 
-  text-align: center;
+.list-group{
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.281);
+ margin-top: 10px;
 }
-.card-text{
-  font-family: 'Sacramento', cursive;
-  font-size: 25px;
-  text-align: center;
+
+.list-group-item{
+  background: linear-gradient(45deg,rgb(225, 233, 240), rgb(197, 221, 238),rgb(160, 207, 244));
 }
-.bi{
-  color: white;
-}
+
 #homepageForm{
   border: 2px solid black;
   padding: 40px;
@@ -132,8 +131,26 @@ html, body {
 #submitBtn{
   padding-left: 500px;
 }
-
-
+#s-btn{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  /* box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.503); */
+}
+#s-btn:hover{
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.625);
+}
+/* .form-check{
+  
+} */
+#homepageForm{
+  background: linear-gradient(45deg, rgb(100, 111, 117), rgb(104, 128, 152), rgb(33, 89, 107));
+}
+#form-heading{
+  text-align: center;
+  padding: 10px;
+  font-family: cursive;
+  font-weight:900;
+}
 
 
 
