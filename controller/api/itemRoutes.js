@@ -44,7 +44,17 @@ router.get('/:id', async (req, res) => {
 // //CREATE item
 router.post('/', async (req, res) => {
     try {
-      const itemData = await Item.create(req.body);
+      const itemData = await Item.create({
+        name: req.body.name, 
+        price: req.body.price, 
+        originalPrice: req.body.originalPrice, 
+        startTime: req.body.startTime, 
+        endTime: req.body.endTime, 
+        dealDay: req.body.dealDay, 
+        isFood: req.body.isFood,
+        locationId: req.body.locationId,
+        userId: req.session.user_id
+      });
 
       res.status(200).json(itemData);
     } catch (err) {
