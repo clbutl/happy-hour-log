@@ -5,7 +5,7 @@ const path = require('path')
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../models/userImages")
+    cb(null, "./userImages")
   },
   filename: (req, file, cb) => {
     console.log(file)
@@ -21,6 +21,18 @@ const upload = multer({ storage: storage })
 
 router.post('/upload', upload.single('image'), (req, res) => {
   res.send("Image Uploaded")
+})
+
+router.put('/', async (req, res) => {
+  try {
+    await User.update(
+      {hasPfp: true},
+      {where: {id: 6}}
+    )
+    res.status(200).json('Updated hasPfp')
+  } catch (err) {
+    res.status(500).json(err)
+  }
 })
 
 module.exports = router;

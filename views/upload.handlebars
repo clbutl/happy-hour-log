@@ -1,7 +1,9 @@
 <div>
   <h1>Upload Items</h1>
-<form method="POST" accept="/api/upload" enctype="multipart/form-data">
+<form method="POST" accept="/api/upload/{{user_id}}" enctype="multipart/form-data">
   <input type="file" name="image">
-  <input type="submit">
+  <input id="upload-btn" type="submit">
 </form>
 </div>
+
+<script src="./js/upload"></script>

@@ -7,7 +7,7 @@ const authUser = require('../utils/auth');
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./models/userImages")
+    cb(null, "./public/userImages")
   },
   filename: (req, file, cb) => {
     console.log(file)
@@ -77,23 +77,18 @@ router.get('/login', async (req, res) => {
       return;
     }
     res.render('login');
+
+  
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 })
 
-router.get('/upload/:username', async (req, res) => {
+router.get('/upload/:id', authUser, async (req, res) => {
   try{
-    const userData = await User.findAll({
-      where: {
-        username: req.params.username
-      } 
-    })
+    const userData = await User.findByPk(req.session.user_id)
     const user = userData.map((user) => user.get({ plain: true }))
-    console.log('------------')
-    console.log(user)
-    console.log('------------')
     res.render('upload', { user })
   } catch (err) {
     console.log(err);
@@ -101,7 +96,7 @@ router.get('/upload/:username', async (req, res) => {
   }
 })
 
-router.post('/upload/:username', upload.single('image'), async (req, res) => {
+router.post('/upload', upload.single('image'), async (req, res) => {
   try {
     // const userData = await User.findAll({
     //   where: {
@@ -110,7 +105,7 @@ router.post('/upload/:username', upload.single('image'), async (req, res) => {
     // })
     // const user = userData.map((user) => user.get({ plain: true }))
 
-    res.render('profile')
+    // res.render('profile')
 
   } catch (err) {
     console.log(err);

@@ -13,11 +13,17 @@ const logOut = async (event) => {
     });
   }
   document.location.replace(`/login`);
+}
 
-  
+const changePfp = async (event) => {
+  event.preventDefault();
+  document.location.replace(`/upload/`);
 }
 
 document
   .querySelector('#logout-btn')
   .addEventListener('click', logOut);
 
+document
+  .querySelector('#pfp-btn')
+  .addEventListener('click', changePfp);

@@ -14,7 +14,11 @@
     <h1 id="home-btn">TITLE HERE</h1>
     <nav class="">
       {{#if logged_in}}
-      <img id="profile-pic" class="black-border profile-btn" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+        {{#if hasPfp}}
+          <img id="profile-pic" class="black-border profile-btn" src="../userImages/{{id}} Profile Picture.jpg" height="75px" alt="Login">
+        {{else}}
+          <img id="profile-pic" class="black-border profile-btn" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+        {{/if}}
       {{else}}
       <img id="profile-pic" class="red-border login-btn" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
       {{/if}}

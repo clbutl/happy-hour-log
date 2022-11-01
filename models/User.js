@@ -36,6 +36,10 @@ User.init(
         len: [8],
       },
     },
+    hasPfp: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    }
   },
   {
     hooks: {
