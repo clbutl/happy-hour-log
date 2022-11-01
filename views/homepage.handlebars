@@ -20,6 +20,7 @@
 
 {{/each}}
 
+{{#if logged_in}}
 <form id="homepageForm" style="width: 40rem; height:42rem;">
   <h5 id="form-heading">POST A DEAL</h5>
   <div class="form-group row">
@@ -79,5 +80,6 @@
     </div>
   </div>
 </form>
+{{/if}}
 
 <script src="./js/homepage.js"></script>
