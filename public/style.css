@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+
 }
 #wrapper {
   min-height: 88%;
@@ -84,13 +85,55 @@ html, body {
   font-size: 30px;
 }
 
+
+/* For homepage */
 .card-header{
   text-align: center;
-}
-
-#homeCard{
-
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.197);
   
 }
+.card{
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.34);
+
+}
+#hp-head{
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 35px;
+  font-weight: bold; 
+
+}
+.card-body, .card-header{
+  background: linear-gradient(45deg, rgb(100, 111, 117), rgb(104, 128, 152), rgb(13, 49, 61));
+  border: 1px solid transparent;
+
+}
+.card-title{
+  font-family: 'Amatic SC', cursive;
+  font-size: 35px;
+  font-weight: bold; 
+  text-align: center;
+}
+.card-text{
+  font-family: 'Sacramento', cursive;
+  font-size: 25px;
+  text-align: center;
+}
+.bi{
+  color: white;
+}
+#homepageForm{
+  border: 2px solid black;
+  padding: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+#submitBtn{
+  padding-left: 500px;
+}
+
+
+
+
+
+
 
