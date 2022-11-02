@@ -68,7 +68,6 @@ router.post('/', async (req, res) => {
    try{
     const itemData = await Item.update(req.body, {
       where: {
-    
         id: req.params.id
       },
     });
@@ -84,7 +83,6 @@ router.post('/', async (req, res) => {
     try {
       const itemData = await Item.destroy({
         where: {
-          isFood: true,
           id: req.params.id,
         },
       });
