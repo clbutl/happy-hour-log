@@ -11,24 +11,17 @@
 
     {{#each items as |item| }}
 
-  <div  id="homeCard" class="card p-3" style="width: 25rem; display:inline-block; margin: 20px;" >
-     <div class="card-header">
   
-     <h3>
-      <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
-    </h3>
+  <div class="card mb-3" id="profile-card" style="max-width: 540px; height: 10rem; border-radius: 10px; margin: 0 auto; display:block;">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body" style="text-align:center;">
+       <h3 class="card-title" style="font-family:'Courier New', Courier, monospace; font-size: 30px;"><strong>{{item.location.restaurantName}}</strong></h3>
+       <p id="item-name">${{item.price}} {{item.name}}</p>
+      </div>
+    </div>
   </div>
-    <blockquote class="blockquote mb-0 card-body">
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurantName}}</li>
-    <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
-    <li class="list-group-item"><strong>Price:</strong> ${{item.price}}</li>
-    <li class="list-group-item"><strong>Original price:</strong> ${{item.originalPrice}}</li>
-    <li class="list-group-item"><strong>Deal day:</strong> {{item.dealDay}}</li>
-    <li class="list-group-item"><strong>Deal type:</strong> {{item.dealType}}</li>
-    </ul>
-    </blockquote>
-  </div>
+</div>
 
 </div>
 </div>
