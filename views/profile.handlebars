@@ -12,18 +12,12 @@
     {{#each items as |item| }}
 
   <div  id="homeCard" class="card p-3" style="width: 25rem; display:inline-block; margin: 20px;" >
-     <div class="card-header">
-  
-     <h3>
-      <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
-    </h3>
 
-  </div>
     <blockquote class="blockquote mb-0 card-body">
 
     <ul class="list-group list-group-flush">
 
-    <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurantName}}</li>
+    <li id="res" class="list-group-item"><h3><strong>{{item.location.restaurantName}}</strong></h3></li>
     <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
     <li class="list-group-item"><strong>Price:</strong> ${{item.price}}</li>
     <li class="list-group-item"><strong>Original price:</strong> ${{item.originalPrice}}</li>
