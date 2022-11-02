@@ -43,9 +43,9 @@
 
   ## Contributing
 
-    - [Edna Omadjambe](https://github.com/Edna1999)
-    - [Cannon Butler](https://github.com/clbutl)
-    - [Andrew Kaminski](https://github.com/AndrewKamSki)
+  - [Edna Omadjambe](https://github.com/Edna1999)
+  - [Cannon Butler](https://github.com/clbutl)
+  - [Andrew Kaminski](https://github.com/AndrewKamSki)
 
   ## License
   The License being used is: MIT
@@ -59,10 +59,10 @@
   ## Future-Development
 
   We had limited time to complete this project, but some enhancements in the future are listed below:
-    - Upload Image to Profile
-    - Upvoting and Downvoting Items
-    - Filtering Content
-    - Sorting content on homepage/profile page
-    - A ‘Recent Posts’ page
-    - Links to restaurant menus
-    - Make each deal post look like an individual, unique flyer instead of cards
+  - Upload Image to Profile
+  - Upvoting and Downvoting Items
+  - Filtering Content
+  - Sorting content on homepage/profile page
+  - A ‘Recent Posts’ page
+  - Links to restaurant menus
+  - Make each deal post look like an individual, unique flyer instead of cards
