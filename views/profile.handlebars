@@ -17,21 +17,16 @@
      <h3>
       <a  href="/users/{{item.user.id}}">{{item.user.username}}</a>
     </h3>
-
   </div>
     <blockquote class="blockquote mb-0 card-body">
-
     <ul class="list-group list-group-flush">
-
     <li class="list-group-item"><strong>Restaurant:</strong> {{item.location.restaurantName}}</li>
     <li class="list-group-item"><strong>Item:</strong> {{item.name}}</li>
     <li class="list-group-item"><strong>Price:</strong> ${{item.price}}</li>
     <li class="list-group-item"><strong>Original price:</strong> ${{item.originalPrice}}</li>
     <li class="list-group-item"><strong>Deal day:</strong> {{item.dealDay}}</li>
     <li class="list-group-item"><strong>Deal type:</strong> {{item.dealType}}</li>
-
-  </ul>
-      
+    </ul>
     </blockquote>
   </div>
 
@@ -40,9 +35,9 @@
 {{/each}}
   </div>
   {{/if}}
-  <button id="logout-btn" class="d-flex justify-content-center text-center">
+  {{!-- <button id="logout-btn" class="">
     Log Out
-  </button>
+  </button> --}}
 </div>
 {{else}}
 <div class="row">
