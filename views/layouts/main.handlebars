@@ -11,14 +11,23 @@
 <body>
 
 <header class="div-header">
-    <h1 id="home-btn">HAPPY HOUR LOG</h1>
+    <h1 id="home-btn">Happy Hour Log</h1>
     <nav class="">
       {{#if logged_in}}
-      <img id="profile-pic" class="black-border profile-btn" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+      <img id="profile-pic" class="dropdown black-border" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+        <div class="dropdown-content-main hidden">
+          <p id="main-profile-btn" class="">Profile</p>
+          <p id="main-create-btn" class="">Create Post</p>
+          <p id="main-logout-btn" class="">Logout</p>
+        </div>
       {{else}}
-      <img id="profile-pic" class="red-border login-btn" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+      <img id="profile-pic" class="dropdown red-border" src="../defaultImages/Default LoggedIn.jpg" height="75px" alt="Login">
+        <div class="dropdown-content-main hidden">
+          <p id="main-login-btn" class="">Login</p>
+        </div>
       {{/if}}
     </nav>
+</div>
 </header>
 
   {{{ body }}}
