@@ -7,6 +7,7 @@ document.querySelector('#home-btn')
 
 
 const dropdownList = document.querySelector('.dropdown-content-main')
+const dropdownList2 = document.querySelector('.dropdown-content-main-2')
 const showDropdown = () => {
   if (dropdownList.classList.contains('hidden')) {
     dropdownList.classList.remove('hidden')
@@ -14,8 +15,18 @@ const showDropdown = () => {
     dropdownList.classList.add('hidden')
   }
 }
-
-document.querySelector('#profile-pic').addEventListener('click', showDropdown)
+const showDropdown2 = () => {
+  if (dropdownList2.classList.contains('hidden')) {
+    dropdownList2.classList.remove('hidden')
+  } else {
+    dropdownList2.classList.add('hidden')
+  }
+}
+if (dropdownList) {
+  document.querySelector('#profile-pic').addEventListener('click', showDropdown)
+} else {
+  document.querySelector('#profile-pic').addEventListener('click', showDropdown2)
+}
 
 const goProfile = () => {
   dropdownList.classList.add('hidden')
@@ -38,11 +49,9 @@ const logOut = async (event) => {
       method: 'POST',
     });
   }
-  dropdownList.classList.add('hidden')
   document.location.replace(`/login`);
 }
 const login = () => {
-  dropdownList.classList.add('hidden')
   document.location.replace(`/login`);
 }
 
