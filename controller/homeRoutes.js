@@ -136,7 +136,7 @@ router.get('/profile/:username', authUser, async (req, res) => {
     })
     const userData = await User.findByPk(userId, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Item }],
+      include: {all: true, nested: true},
     });
 
     let user;
