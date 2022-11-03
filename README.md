@@ -18,9 +18,13 @@
 
   ## Installation
 
-  To install this project, download the files from our repository at https://github.com/clbutl/project-2-repo. Run an NPM install in the console to load in the correct packages, open mysql and run a 'SOURCE db/schema.sql' to initialize the database (after creating a .env file and entering your necessary data), exit sql and run an 'npm run seed' to load in any seed data, and finally do an npm start to start the application and begin entering data! Navigate to the local site at http://localhost:3001 to view the homewebpage.
+  To install this project, download the files from our repository at https://github.com/clbutl/happy-hour-log. Run an NPM install in the console to load in the correct packages, open mysql and run a 'SOURCE db/schema.sql' to initialize the database (after creating a .env file and entering your necessary data), exit sql and run an 'npm run seed' to load in any seed data, and finally do an npm start to start the application and begin entering data! Navigate to the local site at http://localhost:3001 to view the homewebpage.
 
   You can also visit the deployed webpage via the following link: https://possessed-pirate-93340.herokuapp.com/
+  
+  To test this out without making your own account, you can login using our test account:
+  email: test3@gmail.com
+  password: testtest
 
   ## Usage
   On the main homepage you can view other people's posts. Note you the icon is highlighted red in the top left corner becuase you aren't logged in. Click that to log in/ register.
