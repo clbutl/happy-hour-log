@@ -128,9 +128,6 @@ html, body {
   margin: 0 auto;
   background: linear-gradient(45deg, rgb(100, 111, 117), rgb(104, 128, 152), rgb(33, 89, 107));
 }
-#submitBtn{
-  padding-left: 500px;
-}
 #s-btn{
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
@@ -195,6 +192,45 @@ html, body {
   margin-top: 5px;
 }
 
+#profile-card {
+  margin: 20px;
+  max-width: 540px;
+  height: 12rem;
+  border-radius: 10px;
+  display: block;
+} #home-card {
+  width: 25rem; 
+  height:32rem;
+  display: inline-block; 
+  margin: 20px; 
+  border-radius: 10px;
+} #homepageForm {
+  width: 40rem; 
+  height: 54rem;
+  margin-top: 15px;
+} #submitBtn{
+  display: flex;
+  justify-content: right;
+}
 
 
-
+@media screen and (max-width: 590px) {
+  #home-btn {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 445px) {
+  #home-btn {
+    font-size: 35px;
+  } #home-card {
+    margin: 10px 0;
+    width: 100%;
+    height: auto;
+  } 
+}
+@media screen and (max-width: 740px) {
+  #homepageForm {
+    width: 100%;
+    height: auto;
+  } 
+}
