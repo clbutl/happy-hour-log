@@ -1,3 +1,6 @@
+// Remove this file entirely if we commented it out!
+
+
 // const logOut = async (event) => {
 //   event.preventDefault();
 //   console.log(document.location.href)

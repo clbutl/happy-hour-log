@@ -19,7 +19,7 @@ const upload = multer({ storage: storage })
 
 router.get('/', async (req, res) => {
   try {
-   
+   // Remove comments like this before our final submission
     const itemData = await Item.findAll({
       include: {all: true, nested: true},
       // order: [['name', 'DSC']],
@@ -44,6 +44,7 @@ router.get('/users/:id', authUser, async (req, res) => {
   try {
     const dbUserData = await User.findByPk(req.params.id)
     
+    // WE shoudl remove console logs like this before our final submission!
     const userData = dbUserData.get({ plain: true });
     console.log('---------------------')
     console.log(userData)

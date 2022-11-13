@@ -9,6 +9,7 @@ html, body {
   cursor: pointer;
 }
 
+/* I would suggest putting a line break before starting a new style! It makes it easier to read! */
 .main-card {
   display: block;
   justify-content: center;

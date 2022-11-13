@@ -1,4 +1,5 @@
 const postNewDeal = async (event) => {
+  // Be consistent with tabs!
     event.preventDefault();
 
   const itemName = document.getElementById('item-name').value.trim();
@@ -49,6 +50,7 @@ if ( restaurant && city && start && end) {
     
     }else{
       return 'Data not added'
+      // We shouldn't have 3 ending brackets like this! Make sure to space your code our correctly so each of these have an obvious ending of what they apply to
     }
     }
     }
